@@ -19,4 +19,4 @@ and this in another:
 
 window.top is passed as the container in which to create a common event store
 
-There is no support from cross domain frames
+There is no support for cross domain frames
