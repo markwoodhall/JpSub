@@ -8,7 +8,8 @@ jpsub.events = function(eventStore) {
     var _private = {
         publish: function(event, data){
             var events = _private.store.query(event);
-            for(var i = 0; i < events.length; i++){
+            var length = events.length;
+            for(var i = 0; i < length; i++){
                 events[i].callback(data);
             }
         },
@@ -46,14 +47,15 @@ jpsub.eventStore = function(container) {
         },
         query: function(eventName){
             var items = [];
-            for(var i = 0; i < _private.store.length; i++){
-                if(_private.store[i].eventName === eventName)
-                    items.push(_private.store[i]);
+            var length = _private.store.length;
+            for(var i = 0; i < length; i++){
+                var item = _private.store[i];
+                if(item.eventName === eventName)
+                    items.push(item);
             }
             return items;
         }
     }
-
 
     var _public = {
         add: function(event) { _private.add(event); },
