@@ -1,4 +1,4 @@
-﻿/// <reference path="jpsub.js" />
+﻿/// <reference path="../src/jpsub.js" />
 
 describe("jpsub Events", function () {
     var events;
