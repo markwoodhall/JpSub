@@ -1,0 +1,23 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+  "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <title>JpSub Example</title>
+  <script type="text/javascript" src="../Scripts/JpSub/JpSub.js"></script>
+  <script type="text/javascript">
+    var events = new jpsub.events(new jpsub.eventStore(window.top));
+    
+    events.subscribe('SomeEvent', function(data) {
+      alert('Subscribed in Frame');
+    });
+
+    events.subscribe('SomeEvent', function(data) {
+      alert('Subscribed in Frame');
+    });
+
+  </script>
+</head>
+<body>
+  <iframe src="Frame.Html"></iframe>
+</body>
+</html>

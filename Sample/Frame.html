@@ -1,0 +1,20 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+  "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <title>Frame</title>
+  <script type="text/javascript" src="../Scripts/JpSub/JpSub.js"></script>
+</head>
+<body>
+  <input type="button" id="button" value="Click" />
+  <script type="text/javascript">
+
+      var events = new jpsub.events(new jpsub.eventStore(window.top));
+
+      document.getElementById('button').onclick = function(){
+        events.publish('SomeEvent', { data: 'Testing' });
+      }
+
+  </script>
+</body>
+</html>

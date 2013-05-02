@@ -28,5 +28,23 @@ describe("jpsub Events", function () {
         expect(published).toBe(true);
 
     })
+
+    it("should be possible to publish an event to multiple subscribers", function() {
+
+        var publishedCount = 0; 
+
+        events.subscribe('Saved', function(data) { 
+            publishedCount = publishedCount + 1;
+        })
+
+        events.subscribe('Saved', function(data) {
+            publishedCount = publishedCount + 1;
+        })
+
+        events.publish('Saved', { data: "some data"});
+
+        expect(publishedCount).toBe(2);
+
+    })
 });
 
